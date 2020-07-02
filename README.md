@@ -83,4 +83,12 @@ if(!bRet){
     return 0;
 }
 ```
+##特别鸣谢
+[资源共享吧](https://www.zygx8.com/)
+[全能逆向安全培训](https://www.zygx8.com/thread-14469-1-1.html)
+全能逆向安全培训的老师和同学，对我的帮助！
+
+## License
+[NIT](https://opensource.org/licenses/MIT)
+Copyright (c) 2020, 求知者.
 
