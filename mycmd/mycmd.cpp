@@ -18,9 +18,10 @@ int main(int argc, char* argv[])
 	PROCESS_INFORMATION  pi = { 0 };	//使用的时候清零
 	STARTUPINFO si = { 0 };
 	const int n = 123;
-	char szCmdline[256] = "/c calc";
-	BOOL bRet = CreateProcessA(
-		"C:\\Windows\\SysWOW64\\cmd.exe",//被启动的程序
+	TCHAR szCmdline[256] = _T("/c calc");
+	/*char* p = u8"张三";*/
+	BOOL bRet = CreateProcess(
+		_T("C:\\Windows\\SysWOW64\\cmd.exe"),//被启动的程序
 		szCmdline,	//命令行参数
 		NULL,//继承属性
 		NULL,//继承属性
@@ -34,7 +35,7 @@ int main(int argc, char* argv[])
 	return 0;
 }
 /*------------------------------*/
-// int main(int argc,char* argv[])
+// int main(int argc, char* argv[])
 // {
 // 	//我们的程序创建cmd.exe
 // 	//创建进程
@@ -48,10 +49,9 @@ int main(int argc, char* argv[])
 // 	PROCESS_INFORMATION  pi = { 0 };	//使用的时候清零
 // 	STARTUPINFO si = { 0 };
 // 	const int n = 123;
-// 	TCHAR szCmdline[256] =_T("/c calc");
-// 	/*char* p = u8"张三";*/
-// BOOL bRet = CreateProcessA(
-// 	    _T("C:\\Windows\\SysWOW64\\cmd.exe"),//被启动的程序
+// 	char szCmdline[256] = "/c calc";
+// 	BOOL bRet = CreateProcessA(
+// 		"C:\\Windows\\SysWOW64\\cmd.exe",//被启动的程序
 // 		szCmdline,	//命令行参数
 // 		NULL,//继承属性
 // 		NULL,//继承属性
@@ -61,8 +61,8 @@ int main(int argc, char* argv[])
 // 		NULL,	//当前路径 程序双击启动时的路径（相对路径）
 // 		&si,	//传出参数
 // 		&pi	//传出参数
-// 		);
-//     return 0;
+// 	);
+// 	return 0;
 // }
 /*------------------------------*/
 // int main(int argc, char* argv[])
